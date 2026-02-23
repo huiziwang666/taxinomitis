@@ -1,36 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Machine Learning for Kids</title>
+        <title>AINFINITE</title>
 
-        <meta name="description" content="An educational tool for teaching kids about machine learning, by letting them train a computer to recognise text, pictures, numbers, or sounds, and then make things with it in tools like Scratch."/>
+        <meta name="description" content="AI x STEAM x Personalized Learning - Unleash Future-Ready Minds. Train a computer to recognise text, pictures, numbers, or sounds, and make things with it in tools like Scratch."/>
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
         <link href="/static/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
         <link href="/static/bower_components/angular-material/angular-material.min.css" rel="stylesheet" />
 
-        <link rel="icon" href="/static/images/favicon.ico" type="image/x-icon"/>
+        <link rel="icon" href="/static/images/mlforkids-logo.png" type="image/png"/>
 
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta charset="utf-8" />
 
-        <meta name="twitter:card" content="player" />
-        <meta name="twitter:site" content="@MLforKids" />
-        <meta name="twitter:creator" content="@dalelane" />
-        <meta name="twitter:title" content="Machine Learning for Kids" />
-        <meta name="twitter:description" content="An educational tool for teaching kids about machine learning, by letting them train a computer to recognise text, pictures, numbers, or sounds, and make things with it in Scratch." />
-        <meta name="twitter:image" content="https://machinelearningforkids.co.uk/static/images/machinelearningforkids.gif" />
-        <meta name="twitter:player" content="https://machinelearningforkids.co.uk/twitter-card.html" />
-        <meta name="twitter:player:width" value="506" />
-        <meta name="twitter:player:height" value="285" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="AINFINITE" />
+        <meta name="twitter:description" content="AI x STEAM x Personalized Learning - Unleash Future-Ready Minds." />
+        <meta name="twitter:image" content="/static/images/mlforkids-logo.png" />
 
-        <meta property="og:url" content="https://machinelearningforkids.co.uk" />
-        <meta property="og:title" content="Machine Learning for Kids" />
-        <meta property="og:description" content="An educational tool for teaching kids about machine learning, by letting them train a computer to recognise text, pictures, numbers, or sounds, and make things with it in Scratch." />
+        <meta property="og:title" content="AINFINITE" />
+        <meta property="og:description" content="AI x STEAM x Personalized Learning - Unleash Future-Ready Minds." />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://machinelearningforkids.co.uk/static/images/machinelearningforkids.gif" />
-        <meta property="og:video" content="https://machinelearningforkids.co.uk/static/images/machinelearningforkids.gif" />
+        <meta property="og:image" content="/static/images/mlforkids-logo.png" />
 
     </head>
     <body ng-csp="no-unsafe-eval">
@@ -39,7 +32,7 @@
                 <div class="container-fluid">
 
                     <div class="navbar-header">
-                        <a class="navbar-brand" ui-sref="welcome"><img src="static/images/mlforkids-logo.svg"></a>
+                        <a class="navbar-brand" ui-sref="welcome"><img src="static/images/mlforkids-logo.png"> <span class="brand-name">AINFINITE</span></a>
                         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
                             <span class="sr-only">Toggle navigation</span>
                             <span class="icon-bar"></span>
@@ -50,14 +43,10 @@
 
                     <div id="navbar" class="navbar-collapse collapse" role="navigation">
                         <ul class="nav navbar-nav">
-                            <li><a ui-sref="about" data-toggle="collapse" data-target=".navbar-collapse.in" translate="APP.ABOUT"></a></li>
                             <li ng-if="isAuthenticated && isTeacher"><a ui-sref="teacher" data-toggle="collapse" data-target=".navbar-collapse.in" translate="APP.TEACHER"></a></li>
                             <li ng-if="isAuthenticated"><a ui-sref="projects" data-toggle="collapse" data-target=".navbar-collapse.in" translate="APP.PROJECTS"></a></li>
-                            <li><a ui-sref="worksheets" data-toggle="collapse" data-target=".navbar-collapse.in" translate="APP.WORKSHEETS"></a></li>
                             <li><a ui-sref="pretrained" data-toggle="collapse" data-target=".navbar-collapse.in" translate="APP.PRETRAINED"></a></li>
                             <li><a ui-sref="stories({ storyId: 'intro' })" data-toggle="collapse" data-target=".navbar-collapse.in" translate="APP.STORIES" class="navbarextended"></a></li>
-                            <li><a ui-sref="book" data-toggle="collapse" data-target=".navbar-collapse.in" translate="BOOK.TITLE" class="navbarextended"></a></li>
-                            <li><a ui-sref="help" data-toggle="collapse" data-target=".navbar-collapse.in" translate="APP.HELP"></a></li>
                             <li ng-if="debugLogging"><a href='' data-toggle="collapse" data-target=".navbar-collapse.in" ng-click="loggerService.download()" translate="HELP.LOG"></a></li>
 
                             <li ng-if="!isAuthenticated" ng-hide="inMaintenanceMode"><a ui-sref="login" data-toggle="collapse" data-target=".navbar-collapse.in" translate="APP.LOGIN"></a></li>

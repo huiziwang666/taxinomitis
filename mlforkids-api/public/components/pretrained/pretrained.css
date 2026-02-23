@@ -1,13 +1,198 @@
-.mlprojectmenu.aboutsection .aboutdescription.emphasis {
-    font-style: italic;
+/* Hero section */
+.pretrained-hero {
+    text-align: center;
+    padding: 2.5em 2em 2em;
+    background: linear-gradient(135deg, #1B2A4A 0%, #2c4270 100%);
+    color: #fff;
+    margin-bottom: 0;
+}
+.pretrained-hero h2 {
+    font-size: 2.4em;
+    font-weight: 700;
+    margin: 0 0 0.5em;
+}
+.pretrained-hero-intro {
+    max-width: 750px;
+    margin: 0 auto;
+    font-size: 1.15em;
+    line-height: 1.6;
+    opacity: 0.92;
+}
+
+/* How-to section */
+.pretrained-howto {
+    background-color: #f0f4f8;
+    padding: 2em 2em 2.5em;
+    text-align: center;
+    margin-bottom: 2em;
+}
+.pretrained-howto h3 {
+    font-size: 1.8em;
+    font-weight: 700;
+    margin: 0 0 1em;
+    color: #1B2A4A;
+}
+.pretrained-howto-steps {
+    max-width: 700px;
+    margin: 0 auto 1.5em;
+    text-align: left;
+}
+.pretrained-step {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1em;
+    font-size: 1.05em;
+    line-height: 1.5;
+    color: #444;
+}
+.pretrained-step-number {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    background-color: #E8A817;
+    color: #1B2A4A;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 0.95em;
+    margin-right: 12px;
+    margin-top: 2px;
+}
+.pretrained-howto-cta {
+    margin-top: 0.5em;
+}
+.pretrained-howto-cta .btn {
+    padding: 10px 36px;
     font-size: 1.1em;
 }
 
-.mlprojectmenu.aboutsection .aboutdescription.smalldescription {
-    font-size: 1em;
+/* Card grid */
+.pretrained-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto 2em;
+    padding: 0 1em;
 }
 
-.mlprojectmenu.aboutsection .screenshot {
-    max-width: 95%;
-    border: thin black solid;
+/* Individual card */
+.pretrained-card {
+    flex: 1 1 320px;
+    max-width: 100%;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+.pretrained-card:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+}
+
+/* Card header colours */
+.pretrained-card-header {
+    padding: 1em 1.2em;
+    color: #fff;
+}
+.pretrained-card-header h4 {
+    margin: 0;
+    font-size: 1.4em;
+    font-weight: 700;
+}
+.pretrained-card-speech   { background-color: #1B2A4A; }
+.pretrained-card-face     { background-color: #2c4270; }
+.pretrained-card-pose     { background-color: #1B2A4A; }
+.pretrained-card-hand     { background-color: #E8A817; color: #1B2A4A; }
+.pretrained-card-hand h4  { color: #1B2A4A; }
+.pretrained-card-toxicity { background-color: #2c4270; }
+.pretrained-card-imagenet { background-color: #1B2A4A; }
+.pretrained-card-qna      { background-color: #E8A817; color: #1B2A4A; }
+.pretrained-card-qna h4   { color: #1B2A4A; }
+.pretrained-card-spice    { background-color: #2c4270; }
+.pretrained-card-tensorflow { background-color: #1B2A4A; }
+
+/* Card body */
+.pretrained-card-body {
+    padding: 1.2em 1.2em 1.5em;
+}
+.pretrained-card-body p {
+    font-size: 1em;
+    line-height: 1.55;
+    color: #444;
+    margin: 0 0 0.8em;
+}
+
+/* Card screenshot */
+.pretrained-card-img {
+    display: block;
+    max-width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin: 0.8em 0;
+}
+
+/* Smaller detail notes */
+.pretrained-card-note {
+    font-size: 0.9em !important;
+    color: #666 !important;
+}
+
+/* Callout (warnings / important notes) */
+.pretrained-card-callout {
+    font-size: 0.9em !important;
+    font-style: italic;
+    color: #856404 !important;
+    background-color: #fff3cd;
+    border-left: 4px solid #ffc107;
+    padding: 0.6em 0.8em;
+    border-radius: 4px;
+}
+
+/* Card CTA button */
+.pretrained-card-cta {
+    text-align: center;
+    margin-top: 1em;
+}
+
+/* Badge */
+.pretrained-badge {
+    display: inline-block;
+    font-size: 0.55em;
+    font-weight: 600;
+    background-color: rgba(255, 255, 255, 0.25);
+    padding: 2px 10px;
+    border-radius: 12px;
+    vertical-align: middle;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Ideas / footer section */
+.pretrained-ideas {
+    text-align: center;
+    padding: 2em 1em 3em;
+    max-width: 650px;
+    margin: 0 auto;
+    font-size: 1.05em;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Responsive: single column on small screens */
+@media (max-width: 720px) {
+    .pretrained-hero h2 {
+        font-size: 1.8em;
+    }
+    .pretrained-hero-intro {
+        font-size: 1em;
+    }
+    .pretrained-grid {
+        padding: 0 0.5em;
+    }
+    .pretrained-card {
+        flex: 1 1 100%;
+    }
 }

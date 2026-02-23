@@ -1,6 +1,7 @@
 .motto {
     font-size: 5em;
     font-weight: bold;
+    color: #1B2A4A;
 }
 
 .getstartedaction {
@@ -24,7 +25,7 @@
 .getstartedinfo .stepnumber {
     font-size: 4em;
     font-weight: 700;
-    color: #606080;
+    color: #E8A817;
     margin-right: 1em;
     line-height: 1em;
 }

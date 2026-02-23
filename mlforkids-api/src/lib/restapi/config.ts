@@ -125,16 +125,12 @@ export function setupUI(app: express.Application): void {
     const uilocation: string = path.join(__dirname, '/../../../web/static');
     app.use('/static', compression(), express.static(uilocation, { maxAge : constants.ONE_YEAR }));
 
-    app.get('/about', (req, res) => { res.redirect('/#!/about'); });
     app.get('/projects', (req, res) => { res.redirect('/#!/projects'); });
     app.get('/teacher', (req, res) => { res.redirect('/#!/teacher'); });
-    app.get('/worksheets', (req, res) => { res.redirect('/#!/worksheets'); });
-    app.get('/help', (req, res) => { res.redirect('/#!/help'); });
     app.get('/signup', (req, res) => { res.redirect('/#!/signup'); });
     app.get('/login', (req, res) => { res.redirect('/#!/login'); });
     app.get('/apikeys-guide', (req, res) => { res.redirect('/#!/apikeys-guide'); });
     app.get('/pretrained', (req, res) => { res.redirect('/#!/pretrained'); });
-    app.get('/book', (req, res) => { res.redirect('/#!/book'); });
 
     app.get('/scratch', (req, res) => { res.redirect('/scratch/'); });
     app.get('/scratch3', (req, res) => { res.redirect('/scratch/'); });

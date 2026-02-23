@@ -10,10 +10,6 @@
                     ui-sref="login"
                     class="btn btn-primary" translate>WELCOME.GET_STARTED</button>
                 <button
-                    ng-if="!isAuthenticated"
-                    ui-sref="about"
-                    class="btn btn-default" translate>WELCOME.LEARN_MORE</button>
-                <button
                     ng-if="isAuthenticated && isTeacher"
                     ui-sref="teacher"
                     class="btn btn-primary" translate>WELCOME.ADMIN_LABEL</button>

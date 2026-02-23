@@ -1,134 +1,168 @@
-<div class="jumbotron" id="top">
-    <h2 class="text-center" translate="PRETRAINED.TITLE"></h2>
-</div>
-<div class="helpsection">
-    <p translate="PRETRAINED.INTRO.INTRO_1"></p>
-</div>
-<div class="menucontainer">
-    <div class="mlprojectmenu aboutsection aboutwide">
-        <div class="mlprojectmenutitle" translate="PRETRAINED.HOWTO.TITLE"></div>
-        <div class="aboutdescription">
-            <a class="btn btn-primary" target="_blank" href="/scratch/" translate="WELCOME.GET_STARTED"></a>
-        </div>
-        <div class="aboutdescription" translate="PRETRAINED.HOWTO.INTRO"></div>
-        <div class="aboutdescription" translate="PRETRAINED.HOWTO.HOW_1"></div>
-        <div class="aboutdescription" translate="PRETRAINED.HOWTO.HOW_2"></div>
-        <div class="aboutdescription">
-            <img src="static/images/scratch3-extensions.png" class="screenshot"
-                 alt="screenshot of where to find extensions in Scratch 3">
-        </div>
-        <div class="aboutdescription" translate="PRETRAINED.HOWTO.HOW_3"></div>
-        <div class="aboutdescription" translate="PRETRAINED.IDEAS.IDEAS_1"></div>
-        <div class="aboutdescription" translate="PRETRAINED.IDEAS.IDEAS_2"></div>
+<div class="pretrained-page">
+
+    <div class="pretrained-hero">
+        <h2 translate="PRETRAINED.TITLE"></h2>
+        <p class="pretrained-hero-intro" translate="PRETRAINED.INTRO.INTRO_1"></p>
     </div>
 
-    <div class="mlprojectmenu aboutsection aboutnarrow">
-        <div class="mlprojectmenutitle" translate="PRETRAINED.SPEECHTOTEXT.TITLE"></div>
-        <div class="aboutdescription" translate="PRETRAINED.SPEECHTOTEXT.SPEECH_1"></div>
-        <div class="aboutdescription" translate="PRETRAINED.SPEECHTOTEXT.SPEECH_2"></div>
-        <div class="aboutdescription">
-            <img src="static/images/pretrained-speechtotext.png" class="screenshot"
-                 alt="screenshot of the speech to text blocks">
+    <div class="pretrained-howto">
+        <h3 translate="PRETRAINED.HOWTO.TITLE"></h3>
+        <div class="pretrained-howto-steps">
+            <div class="pretrained-step">
+                <span class="pretrained-step-number">1</span>
+                <span translate="PRETRAINED.HOWTO.HOW_1"></span>
+            </div>
+            <div class="pretrained-step">
+                <span class="pretrained-step-number">2</span>
+                <span translate="PRETRAINED.HOWTO.HOW_2"></span>
+            </div>
+            <div class="pretrained-step">
+                <span class="pretrained-step-number">3</span>
+                <span translate="PRETRAINED.HOWTO.HOW_3"></span>
+            </div>
         </div>
-        <div class="aboutdescription smalldescription" translate="PRETRAINED.SPEECHTOTEXT.SPEECH_3"></div>
+        <div class="pretrained-howto-cta">
+            <a class="btn btn-primary btn-lg" target="_blank" href="/scratch/" translate="WELCOME.GET_STARTED"></a>
+        </div>
     </div>
 
-    <div class="mlprojectmenu aboutsection aboutnarrow">
-        <div class="mlprojectmenutitle" translate="PRETRAINED.FACEAPI.TITLE"></div>
-        <div class="aboutdescription" translate="PRETRAINED.FACEAPI.FACE_1"></div>
-        <div class="aboutdescription" translate="PRETRAINED.FACEAPI.FACE_2"></div>
-        <div class="aboutdescription">
-            <img src="static/images/pretrained-faceapi.png" class="screenshot"
-                 alt="screenshot of the face detection blocks">
+    <div class="pretrained-grid">
+
+        <div class="pretrained-card">
+            <div class="pretrained-card-header pretrained-card-speech">
+                <h4 translate="PRETRAINED.SPEECHTOTEXT.TITLE"></h4>
+            </div>
+            <div class="pretrained-card-body">
+                <p translate="PRETRAINED.SPEECHTOTEXT.SPEECH_1"></p>
+                <p translate="PRETRAINED.SPEECHTOTEXT.SPEECH_2"></p>
+                <img src="static/images/pretrained-speechtotext.png" class="pretrained-card-img"
+                     alt="screenshot of the speech to text blocks">
+                <p class="pretrained-card-note" translate="PRETRAINED.SPEECHTOTEXT.SPEECH_3"></p>
+            </div>
         </div>
-        <div class="aboutdescription smalldescription" translate="PRETRAINED.FACEAPI.FACE_3"></div>
-        <div class="aboutdescription smalldescription" translate="PRETRAINED.FACEAPI.FACE_4"></div>
+
+        <div class="pretrained-card">
+            <div class="pretrained-card-header pretrained-card-face">
+                <h4 translate="PRETRAINED.FACEAPI.TITLE"></h4>
+            </div>
+            <div class="pretrained-card-body">
+                <p translate="PRETRAINED.FACEAPI.FACE_1"></p>
+                <p translate="PRETRAINED.FACEAPI.FACE_2"></p>
+                <img src="static/images/pretrained-faceapi.png" class="pretrained-card-img"
+                     alt="screenshot of the face detection blocks">
+                <p class="pretrained-card-note" translate="PRETRAINED.FACEAPI.FACE_3"></p>
+                <p class="pretrained-card-note" translate="PRETRAINED.FACEAPI.FACE_4"></p>
+            </div>
+        </div>
+
+        <div class="pretrained-card">
+            <div class="pretrained-card-header pretrained-card-pose">
+                <h4 translate="PRETRAINED.POSENET.TITLE"></h4>
+            </div>
+            <div class="pretrained-card-body">
+                <p translate="PRETRAINED.POSENET.POSE_1"></p>
+                <p translate="PRETRAINED.POSENET.POSE_2"></p>
+                <img src="static/images/pretrained-posenet.png" class="pretrained-card-img"
+                     alt="screenshot of the pose detection blocks">
+                <p class="pretrained-card-note" translate="PRETRAINED.POSENET.POSE_3"></p>
+                <p class="pretrained-card-note" translate="PRETRAINED.POSENET.POSE_4"></p>
+                <p class="pretrained-card-note" translate="PRETRAINED.POSENET.POSE_5"></p>
+            </div>
+        </div>
+
+        <div class="pretrained-card">
+            <div class="pretrained-card-header pretrained-card-hand">
+                <h4 translate="PRETRAINED.HANDPOSE.TITLE"></h4>
+            </div>
+            <div class="pretrained-card-body">
+                <p translate="PRETRAINED.HANDPOSE.POSE_1"></p>
+                <p translate="PRETRAINED.HANDPOSE.POSE_2"></p>
+                <img src="static/images/pretrained-handpose.png" class="pretrained-card-img"
+                     alt="screenshot of the hand detection blocks">
+                <p class="pretrained-card-note" translate="PRETRAINED.HANDPOSE.POSE_3"></p>
+                <p class="pretrained-card-note" translate="PRETRAINED.HANDPOSE.POSE_4"></p>
+            </div>
+        </div>
+
+        <div class="pretrained-card">
+            <div class="pretrained-card-header pretrained-card-toxicity">
+                <h4 translate="PRETRAINED.TOXICITY.TITLE"></h4>
+            </div>
+            <div class="pretrained-card-body">
+                <p translate="PRETRAINED.TOXICITY.TOXICITY_1"></p>
+                <p translate="PRETRAINED.TOXICITY.TOXICITY_2"></p>
+                <img src="static/images/pretrained-toxicity.png" class="pretrained-card-img"
+                     alt="screenshot of the toxicity blocks">
+                <p class="pretrained-card-note" translate="PRETRAINED.TOXICITY.TOXICITY_3"></p>
+            </div>
+        </div>
+
+        <div class="pretrained-card">
+            <div class="pretrained-card-header pretrained-card-imagenet">
+                <h4 translate="PRETRAINED.IMAGENET.TITLE"></h4>
+            </div>
+            <div class="pretrained-card-body">
+                <p translate="PRETRAINED.IMAGENET.IMAGENET_1"></p>
+                <p translate="PRETRAINED.IMAGENET.IMAGENET_2"></p>
+                <img src="static/images/pretrained-imagenet.png" class="pretrained-card-img"
+                     alt="screenshot of the imagenet blocks">
+                <p class="pretrained-card-note" translate="PRETRAINED.IMAGENET.IMAGENET_3"></p>
+                <p class="pretrained-card-note" translate="PRETRAINED.IMAGENET.IMAGENET_4"></p>
+            </div>
+        </div>
+
+        <div class="pretrained-card">
+            <div class="pretrained-card-header pretrained-card-qna">
+                <h4 translate="PRETRAINED.QNA.TITLE"></h4>
+            </div>
+            <div class="pretrained-card-body">
+                <p translate="PRETRAINED.QNA.QNA_1"></p>
+                <p translate="PRETRAINED.QNA.QNA_2"></p>
+                <img src="static/images/pretrained-qna.png" class="pretrained-card-img"
+                     alt="screenshot of the Q&A blocks">
+                <p class="pretrained-card-note" translate="PRETRAINED.QNA.QNA_3"></p>
+                <p class="pretrained-card-note" translate="PRETRAINED.QNA.QNA_4"></p>
+                <p class="pretrained-card-callout" translate="PRETRAINED.QNA.QNA_5"></p>
+            </div>
+        </div>
+
+        <div class="pretrained-card">
+            <div class="pretrained-card-header pretrained-card-spice">
+                <h4 translate="PRETRAINED.SPICE.TITLE"></h4>
+            </div>
+            <div class="pretrained-card-body">
+                <p translate="PRETRAINED.SPICE.SPICE_1"></p>
+                <p translate="PRETRAINED.SPICE.SPICE_2"></p>
+                <img src="static/images/pretrained-spice.png" class="pretrained-card-img"
+                     alt="screenshot of the voice tuner blocks">
+                <p class="pretrained-card-note" translate="PRETRAINED.SPICE.SPICE_3"></p>
+                <p class="pretrained-card-note" translate="PRETRAINED.SPICE.SPICE_4"></p>
+                <p class="pretrained-card-callout" translate="PRETRAINED.SPICE.SPICE_5"></p>
+            </div>
+        </div>
+
+        <div class="pretrained-card">
+            <div class="pretrained-card-header pretrained-card-tensorflow">
+                <h4>{{ 'PRETRAINED.TENSORFLOW.TITLE' | translate }} <span class="pretrained-badge">beta</span></h4>
+            </div>
+            <div class="pretrained-card-body">
+                <p translate="PRETRAINED.TENSORFLOW.TF_1"></p>
+                <p translate="PRETRAINED.TENSORFLOW.TF_2"></p>
+                <p translate="PRETRAINED.TENSORFLOW.TF_3"></p>
+                <p translate="PRETRAINED.TENSORFLOW.TF_4"></p>
+                <p><a href="https://dalelane.co.uk/blog/?p=4201" translate="DATASETS.MORE.MOREINFO"></a></p>
+                <p class="pretrained-card-callout" translate="PRETRAINED.TENSORFLOW.TF_5"></p>
+                <div class="pretrained-card-cta">
+                    <a class="btn btn-primary" ng-click="vm.openTensorFlowDialog($event)" translate="PRETRAINED.TENSORFLOW.BUTTON"></a>
+                </div>
+            </div>
+        </div>
+
     </div>
 
-    <div class="mlprojectmenu aboutsection aboutnarrow">
-        <div class="mlprojectmenutitle" translate="PRETRAINED.POSENET.TITLE"></div>
-        <div class="aboutdescription" translate="PRETRAINED.POSENET.POSE_1"></div>
-        <div class="aboutdescription" translate="PRETRAINED.POSENET.POSE_2"></div>
-        <div class="aboutdescription">
-            <img src="static/images/pretrained-posenet.png" class="screenshot"
-                 alt="screenshot of the pose detection blocks">
-        </div>
-        <div class="aboutdescription smalldescription" translate="PRETRAINED.POSENET.POSE_3"></div>
-        <div class="aboutdescription smalldescription" translate="PRETRAINED.POSENET.POSE_4"></div>
-        <div class="aboutdescription smalldescription" translate="PRETRAINED.POSENET.POSE_5"></div>
+    <div class="pretrained-ideas">
+        <p translate="PRETRAINED.IDEAS.IDEAS_1"></p>
+        <p translate="PRETRAINED.IDEAS.IDEAS_2"></p>
     </div>
 
-    <div class="mlprojectmenu aboutsection aboutnarrow">
-        <div class="mlprojectmenutitle" translate="PRETRAINED.HANDPOSE.TITLE"></div>
-        <div class="aboutdescription" translate="PRETRAINED.HANDPOSE.POSE_1"></div>
-        <div class="aboutdescription" translate="PRETRAINED.HANDPOSE.POSE_2"></div>
-        <div class="aboutdescription">
-            <img src="static/images/pretrained-handpose.png" class="screenshot"
-                 alt="screenshot of the hand detection blocks">
-        </div>
-        <div class="aboutdescription smalldescription" translate="PRETRAINED.HANDPOSE.POSE_3"></div>
-        <div class="aboutdescription smalldescription" translate="PRETRAINED.HANDPOSE.POSE_4"></div>
-    </div>
-
-    <div class="mlprojectmenu aboutsection aboutnarrow">
-        <div class="mlprojectmenutitle" translate="PRETRAINED.TOXICITY.TITLE"></div>
-        <div class="aboutdescription" translate="PRETRAINED.TOXICITY.TOXICITY_1"></div>
-        <div class="aboutdescription" translate="PRETRAINED.TOXICITY.TOXICITY_2"></div>
-        <div class="aboutdescription">
-            <img src="static/images/pretrained-toxicity.png" class="screenshot"
-                 alt="screenshot of the toxicity blocks">
-        </div>
-        <div class="aboutdescription smalldescription" translate="PRETRAINED.TOXICITY.TOXICITY_3"></div>
-    </div>
-
-    <div class="mlprojectmenu aboutsection aboutnarrow">
-        <div class="mlprojectmenutitle" translate="PRETRAINED.IMAGENET.TITLE"></div>
-        <div class="aboutdescription" translate="PRETRAINED.IMAGENET.IMAGENET_1"></div>
-        <div class="aboutdescription" translate="PRETRAINED.IMAGENET.IMAGENET_2"></div>
-        <div class="aboutdescription">
-            <img src="static/images/pretrained-imagenet.png" class="screenshot"
-                 alt="screenshot of the imagenet blocks">
-        </div>
-        <div class="aboutdescription smalldescription" translate="PRETRAINED.IMAGENET.IMAGENET_3"></div>
-        <div class="aboutdescription smalldescription" translate="PRETRAINED.IMAGENET.IMAGENET_4"></div>
-    </div>
-
-    <div class="mlprojectmenu aboutsection aboutnarrow">
-        <div class="mlprojectmenutitle" translate="PRETRAINED.QNA.TITLE"></div>
-        <div class="aboutdescription" translate="PRETRAINED.QNA.QNA_1"></div>
-        <div class="aboutdescription" translate="PRETRAINED.QNA.QNA_2"></div>
-        <div class="aboutdescription">
-            <img src="static/images/pretrained-qna.png" class="screenshot"
-                 alt="screenshot of the Q&A blocks">
-        </div>
-        <div class="aboutdescription smalldescription" translate="PRETRAINED.QNA.QNA_3"></div>
-        <div class="aboutdescription smalldescription" translate="PRETRAINED.QNA.QNA_4"></div>
-        <div class="aboutdescription smalldescription emphasis" translate="PRETRAINED.QNA.QNA_5"></div>
-    </div>
-
-    <div class="mlprojectmenu aboutsection aboutnarrow">
-        <div class="mlprojectmenutitle" translate="PRETRAINED.SPICE.TITLE"></div>
-        <div class="aboutdescription" translate="PRETRAINED.SPICE.SPICE_1"></div>
-        <div class="aboutdescription" translate="PRETRAINED.SPICE.SPICE_2"></div>
-        <div class="aboutdescription">
-            <img src="static/images/pretrained-spice.png" class="screenshot"
-                 alt="screenshot of the voice tuner blocks">
-        </div>
-        <div class="aboutdescription smalldescription" translate="PRETRAINED.SPICE.SPICE_3"></div>
-        <div class="aboutdescription smalldescription" translate="PRETRAINED.SPICE.SPICE_4"></div>
-        <div class="aboutdescription smalldescription emphasis" translate="PRETRAINED.SPICE.SPICE_5"></div>
-    </div>
-
-    <div class="mlprojectmenu aboutsection aboutnarrow">
-        <div class="mlprojectmenutitle">{{ 'PRETRAINED.TENSORFLOW.TITLE' | translate }} <span class='badge'>beta</span></div>
-        <div class="aboutdescription">
-            <a class="btn btn-primary" ng-click="vm.openTensorFlowDialog($event)" translate="PRETRAINED.TENSORFLOW.BUTTON"></a>
-        </div>
-        <div class="aboutdescription" translate="PRETRAINED.TENSORFLOW.TF_1"></div>
-        <div class="aboutdescription" translate="PRETRAINED.TENSORFLOW.TF_2"></div>
-        <div class="aboutdescription" translate="PRETRAINED.TENSORFLOW.TF_3"></div>
-        <div class="aboutdescription" translate="PRETRAINED.TENSORFLOW.TF_4"></div>
-        <div class="aboutdescription"><a href="https://dalelane.co.uk/blog/?p=4201" translate="DATASETS.MORE.MOREINFO"></a></div>
-        <div class="aboutdescription emphasis" translate="PRETRAINED.TENSORFLOW.TF_5"></div>
-    </div>
 </div>

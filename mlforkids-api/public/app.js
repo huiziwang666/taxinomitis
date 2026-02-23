@@ -48,23 +48,9 @@
                     DEPLOYMENT : '<%= DEPLOYMENT %>'
                 }
             })
-            .state('about', {
-                url: '/about',
-                templateUrl: 'static/components/about/about.html'
-            })
-            .state('help', {
-                url: '/help',
-                templateUrl: 'static/components/help/help.html'
-            })
             .state('apikeysguide', {
                 url: '/apikeys-guide',
                 templateUrl: 'static/components/apikeysguide/guide.html'
-            })
-            .state('worksheets', {
-                url: '/worksheets',
-                controller: 'WorksheetsController',
-                templateUrl: 'static/components/worksheets/worksheets.html',
-                controllerAs: 'vm'
             })
             .state('teacher', {
                 url: '/teacher',
@@ -252,10 +238,6 @@
                 templateUrl: 'static/components/debugapi/debugapi.html',
                 controllerAs: 'vm'
             })
-            .state('book', {
-                url: '/book',
-                templateUrl: 'static/components/book/book.html',
-            })
             .state('debug', {
                 url: '/debug',
                 templateUrl: 'static/components/debug/debug.html',
@@ -277,8 +259,8 @@
                         }
                     },
                     theme : {
-                        logo : 'static/images/mlforkids-logo.svg',
-                        primaryColor : '#337ab7'
+                        logo : 'static/images/mlforkids-logo.png',
+                        primaryColor : '#1B2A4A'
                     },
 
                     // assuming school computers are shared so doing this would be bad

@@ -31,7 +31,7 @@ describe('REST API - UI', () => {
         }
 
         it('should redirect main site sections', () => {
-            const names = [ 'about', 'projects', 'teacher', 'worksheets', 'help', 'signup', 'login' ];
+            const names = [ 'projects', 'teacher', 'signup', 'login' ];
             return Promise.all(names.map((name) => verifyRedirect(name)));
         });
     });
