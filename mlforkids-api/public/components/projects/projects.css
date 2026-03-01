@@ -1,168 +1,253 @@
-@media(max-width: 540px) {
-    .mlproject {
-        width: 95%;
-    }
-}
-@media(min-width: 540px) and (max-width: 650px) {
-    .mlproject {
-        width: 90%;
-    }
-}
-@media(min-width: 650px) and (max-width: 800px) {
-    .mlproject {
-        width: 80%;
-    }
-}
-@media(min-width: 800px) and (max-width: 940px) {
-    .mlproject {
-        width: 75%;
-    }
-}
-@media(min-width: 940px) {
-    .mlproject {
-        width: 70%;
-    }
-}
+/* ========================================
+   Projects (Train) Page
+   ======================================== */
 
-.mlproject {
-    clear: both;
-    margin-left: auto;
-    margin-right: auto;
+/* Hero header */
+.projects-hero {
+    text-align: center;
+    padding: 2em 1em 1.5em;
+    background: linear-gradient(135deg, #1B2A4A 0%, #2c4270 100%);
+    color: #fff;
+    margin-bottom: 0;
 }
-
-.mlprojecthighlight {
-    border: thin #1864ab solid;
-}
-
-
-@media(min-width: 900px) {
-    .mlprojectdetails {
-        width: 90%;
-    }
-}
-@media(max-width: 900px) {
-    .mlprojectdetails {
-        width: 85%;
-    }
-}
-.mlprojectdetails {
-    margin-bottom: 1em;
-    padding: 1em 1.5em;
-    background-color: #eeeeee;
-    border-radius: 2em;
-    text-align: left;
-    cursor: pointer;
-    float: left;
-}
-
-.mlprojectdetails.placeholder {
-    color: #808080;
-    background-color: #f1f1fb;
-}
-
-.mlprojecttitle {
-    font-weight: bold;
+.projects-hero h2 {
     font-size: 2.2em;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: 0.5px;
 }
 
-@media(max-width: 460px) {
-    .mlprojectdescription {
-        padding: 0.5em 0.5em 0;
-    }
-}
-@media(min-width: 460px) {
-    .mlprojectdescription {
-        padding: 0.5em 2.5em 0;
-    }
-}
-.mlprojectdescription {
-    font-size: 1.2em;
+/* Login prompt */
+.projects-login-prompt {
+    max-width: 500px;
+    margin: 2em auto;
+    text-align: center;
 }
 
-.mlprojecttype {
-    color: darkblue;
-    font-weight: bold;
-    font-size: 1.5em;
-    margin-left: 0.5em;
-    margin-right: 0.5em;
+/* Alerts */
+.projects-alerts {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1em;
+}
+.projects-alerts .alert {
+    margin-top: 1em;
 }
 
-.mlprojectlabels {
-    color: darkgreen;
-    font-weight: bold;
-    font-size: 1.5em;
-    margin-left: 0.5em;
-}
-
-.mlprojectdelete {
-    float: right;
-    margin-top: 2.5em;
-}
-
-.newprojectbuttons {
+/* Action bar */
+.projects-action-bar {
     display: flex;
-    flex-direction: row-reverse;
-    margin-right: 5em;
-    margin-bottom: 2em;
+    justify-content: flex-end;
+    gap: 12px;
+    max-width: 900px;
+    margin: 1.5em auto 1em;
+    padding: 0 1em;
 }
-.newprojectbuttons .page-header-alert-info {
-    margin-bottom: initial;
-}
-.newprojectbutton {
-    border: 1px solid #ddd;
-    border-right-width: 2px;
-    border-bottom-width: 2px;
-    border-radius: 5px;
-    padding: 3px;
-    background-color: white;
-    outline: none;
+.projects-action-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    background: #fff;
     cursor: pointer;
-    margin-left: 1em;
-    color: black;
+    font-size: 0.95em;
+    font-weight: 500;
+    color: #1B2A4A;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
 }
-.newprojecticon {
-    font-size: 3em;
-    font-weight: bold;
-    float: left;
-    margin-top: 0;
-    padding-top: 0;
-    line-height: 30px;
-    margin-right: 10px;
-    color: black;
+.projects-action-btn:hover {
+    border-color: #E8A817;
+    box-shadow: 0 2px 8px rgba(232, 168, 23, 0.15);
 }
-.newprojecticon.glyphicon.glyphicon-import {
-    font-size: 2em;
+.projects-action-btn-primary {
+    background-color: #E8A817;
+    border-color: #E8A817;
+    color: #1B2A4A;
+    font-weight: 600;
 }
-.newprojectlabel {
-    float: right;
+.projects-action-btn-primary:hover {
+    background-color: #d49a14;
+    border-color: #d49a14;
+    box-shadow: 0 2px 8px rgba(232, 168, 23, 0.3);
+}
+.projects-action-plus {
+    font-size: 1.4em;
+    font-weight: 700;
+    line-height: 1;
+}
+.projects-action-btn .glyphicon {
+    font-size: 1.1em;
+}
+
+/* Empty state */
+.projects-empty {
+    text-align: center;
+    padding: 4em 2em;
+    max-width: 500px;
+    margin: 0 auto;
+    color: #888;
+}
+.projects-empty-icon {
+    font-size: 4em;
+    font-weight: 700;
+    color: #E8A817;
     width: 80px;
+    height: 80px;
+    line-height: 76px;
+    border: 3px dashed #E8A817;
+    border-radius: 50%;
+    margin: 0 auto 1em;
+}
+.projects-empty p {
+    font-size: 1.15em;
+    line-height: 1.5;
 }
 
-.mlprojectdetails .mlprojecticon {
-    background-color: white;
-    height: 28px;
-    width: 28px;
+/* Project cards grid */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto 3em;
+    padding: 0 1em;
+}
+
+/* Individual project card */
+.project-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+    overflow: hidden;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+    display: flex;
+    flex-direction: column;
+}
+.project-card:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+}
+.project-card-highlight {
+    box-shadow: 0 0 0 2px #E8A817 !important;
+}
+.project-card-placeholder {
+    opacity: 0.5;
+}
+
+/* Card body (clickable area) */
+.project-card-body {
+    padding: 1.3em 1.5em;
+    cursor: pointer;
+    flex: 1;
+    position: relative;
+}
+
+/* Type badge */
+.project-card-type-badge {
+    display: inline-block;
+    font-size: 0.75em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 3px 12px;
+    border-radius: 20px;
+    margin-bottom: 0.8em;
+    color: #fff;
+}
+.badge-text    { background-color: #1B2A4A; }
+.badge-images  { background-color: #2c4270; }
+.badge-numbers { background-color: #E8A817; color: #1B2A4A; }
+.badge-sounds  { background-color: #1B2A4A; }
+
+/* Card title */
+.project-card-title {
+    font-size: 1.4em;
+    font-weight: 700;
+    color: #1B2A4A;
+    margin: 0 0 0.4em;
+    line-height: 1.3;
+}
+
+/* Card description */
+.project-card-desc {
+    font-size: 0.95em;
+    color: #666;
+    line-height: 1.5;
+}
+.project-card-labels {
+    color: #E8A817;
+    font-weight: 600;
+}
+
+/* Status icons row */
+.project-card-icons {
+    display: flex;
+    gap: 6px;
+    margin-top: 0.8em;
+}
+.project-icon {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
     background-size: contain;
-    border: thin #333 solid;
-    float: right;
-    margin-top: -30px;
+    background-repeat: no-repeat;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
 }
-
-.mlprojectdetails .mlprojectcrowd {
+.project-icon:hover {
+    opacity: 1;
+}
+.project-icon-crowd {
     background-image: url('./../../static/images/group.png');
-    margin-right: 32px;
 }
-
-.mlprojectdetails .mlprojectcloud {
+.project-icon-cloud {
     background-image: url('./../../static/images/cloud.png');
 }
-
-.mlprojectdetails .mlprojectlocal {
+.project-icon-local {
     background-image: url('./../../static/images/local.png');
 }
 
-.mlprojectssharebutton {
-    margin: 4px;
-    font-size: 0.8em;
-    padding: 4px;
+/* Card actions footer */
+.project-card-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    padding: 0.7em 1.2em;
+    border-top: 1px solid #f0f0f0;
+    background-color: #fafafa;
+}
+.project-share-btn {
+    font-size: 0.8em !important;
+    padding: 3px 10px !important;
+}
+.project-delete-icon {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 0.2s ease;
+}
+.project-delete-icon:hover {
+    opacity: 1;
+}
+
+/* Responsive */
+@media (max-width: 720px) {
+    .projects-hero h2 {
+        font-size: 1.7em;
+    }
+    .projects-action-bar {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .projects-grid {
+        grid-template-columns: 1fr;
+        padding: 0 0.75em;
+    }
 }

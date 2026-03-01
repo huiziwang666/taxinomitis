@@ -30,20 +30,35 @@ body.md-default-theme {
     margin-top: 2em;
 }
 
+/* --- Navbar --- */
 .navbar {
     margin-bottom: 0;
     border-radius: 0;
+    border: none;
+    min-height: 56px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 .navbar-default {
     background-color: #1B2A4A;
-    border-color: #15223c;
+    border-color: transparent;
 }
 .navbar-default .navbar-brand,
 .navbar-default .navbar-nav > li > a {
     color: #fff;
+    font-weight: 500;
+    font-size: 0.95em;
+    letter-spacing: 0.3px;
+    padding: 18px 16px;
+    transition: color 0.2s ease, background-color 0.2s ease;
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
+    color: #E8A817;
+    background-color: rgba(232, 168, 23, 0.08);
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover {
+    background-color: rgba(232, 168, 23, 0.12);
     color: #E8A817;
 }
 .navbar-default .navbar-brand:hover,
@@ -52,17 +67,19 @@ body.md-default-theme {
 }
 .navbar-default .navbar-toggle {
     border-color: #E8A817;
+    margin-top: 11px;
+    margin-bottom: 11px;
 }
 .navbar-default .navbar-toggle .icon-bar {
     background-color: #E8A817;
 }
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
-    background-color: #15223c;
+    background-color: rgba(232, 168, 23, 0.12);
 }
 .navbar-default .navbar-collapse,
 .navbar-default .navbar-form {
-    border-color: #15223c;
+    border-color: rgba(255, 255, 255, 0.1);
 }
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,
@@ -72,35 +89,41 @@ body.md-default-theme {
 }
 .navbar-default .navbar-nav .dropdown-menu {
     background-color: #1B2A4A;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 .navbar-default .navbar-nav .dropdown-menu > li > a {
     color: #ddd;
+    padding: 8px 20px;
+    transition: color 0.2s ease, background-color 0.2s ease;
 }
 .navbar-default .navbar-nav .dropdown-menu > li > a:hover {
     background-color: #15223c;
     color: #E8A817;
 }
 .navbar-default .navbar-nav .dropdown-menu .divider {
-    background-color: #15223c;
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 a.navbar-brand {
-    padding-top: 5px;
+    padding: 8px 15px !important;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
+    height: 56px;
 }
 
 .navbar-brand img {
-    width: 40px;
-    height: 40px;
+    width: 38px;
+    height: 38px;
 }
 
 .brand-name {
     font-weight: 700;
-    font-size: 1.2em;
-    letter-spacing: 1px;
+    font-size: 1.25em;
+    letter-spacing: 1.5px;
     color: #E8A817;
+    text-transform: uppercase;
 }
 
 /* Global brand color overrides */

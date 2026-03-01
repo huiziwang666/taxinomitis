@@ -1,104 +1,143 @@
-<div class="jumbotron">
-    <h2 class="text-center" translate="PROJECTS.TITLE"></h2>
-</div>
-<div ng-if="!isAuthenticated">
-    <div class="alert alert-warning pageheadermsg">
-        <strong translate="ERRORS.NOTLOGGEDIN"></strong>
-    </div>
-    <div class="text-center">
-        <button class="btn btn-primary" ng-click="vm.authService.login()" translate="APP.LOGIN"></button>
-    </div>
-</div>
-<div ng-if="isAuthenticated">
-    <div ng-repeat="error in vm.errors" class="alert alert-danger alert-dismissible pageheadermsg" role="alert" ng-click="vm.dismissAlert('errors', $index)">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <strong translate="APP.ERROR"></strong> {{ error.message }}<br/>
-        <em ng-if="error.status >= 500"><span translate="ERRORS.IFPERSISTENT"></span> <a ui-sref="help" translate="ERRORS.LETMEKNOW"></a></em>
-    </div>
-    <div ng-repeat="warning in vm.warnings" class="alert alert-warning alert-dismissible pageheadermsg" role="alert" ng-click="vm.dismissAlert('warnings', $index)">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <strong translate="APP.WARNING"></strong> {{ warning.message }}
+<div class="projects-page">
+
+    <!-- Hero header -->
+    <div class="projects-hero">
+        <h2 translate="PROJECTS.TITLE"></h2>
     </div>
 
-    <div class="newprojectbuttons">
-        <div class="newprojectbutton" ui-sref="importdataset">
-            <div class="newprojecticon glyphicon glyphicon-import"></div>
-            <div class="newprojectlabel" translate="PROJECTS.COPYTEMPLATE"></div>
+    <!-- Not logged in -->
+    <div ng-if="!isAuthenticated" class="projects-login-prompt">
+        <div class="alert alert-warning">
+            <strong translate="ERRORS.NOTLOGGEDIN"></strong>
         </div>
-        <div class="newprojectbutton" ui-sref="newproject">
-            <div class="newprojecticon">+</div>
-            <div class="newprojectlabel" translate="PROJECTS.ADDNEWPROJECT"></div>
-        </div>
-        <div class="alert alert-info pageheadermsg page-header-alert-info" ng-if="vm.projects && vm.projects.length === 0">
-            {{ 'PROJECTS.CREATEFIRSTPROJECT' | translate }}
-            <span class="glyphicon glyphicon-arrow-right"></span>
+        <div class="text-center">
+            <button class="btn btn-primary btn-lg" ng-click="vm.authService.login()" translate="APP.LOGIN"></button>
         </div>
     </div>
 
-    <div ng-if="!vm.projects" class="loading"> </div>
+    <!-- Logged in -->
+    <div ng-if="isAuthenticated">
 
-    <div class="text-center mlpagecontents">
-        <div class="mlproject" ng-repeat="project in vm.projects" id="{{project.id}}">
-            <div class="mlprojectdetails placeholder" ng-if="project.isPlaceholder">
-                <div class="mlprojecttitle">{{ project.name }}</div>
+        <!-- Error / warning alerts -->
+        <div class="projects-alerts">
+            <div ng-repeat="error in vm.errors" class="alert alert-danger alert-dismissible" role="alert" ng-click="vm.dismissAlert('errors', $index)">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <strong translate="APP.ERROR"></strong> {{ error.message }}<br/>
+                <em ng-if="error.status >= 500"><span translate="ERRORS.IFPERSISTENT"></span> <a ui-sref="help" translate="ERRORS.LETMEKNOW"></a></em>
             </div>
-            <div class="mlprojectdetails" ng-if="!project.isPlaceholder" ng-hide="project.type === 'language'"
-                 ui-sref="mlproject({ projectId : project.id, userId : project.userid })"
-                 ng-class="{ 'mlprojecthighlight' : vm.highlightId === project.id }">
-                <div class="mlprojecttitle">{{ project.name }}</div>
-                <div class="mlprojectdescription">
-                    <span ng-hide="project.type === 'regression'" translate="PROJECTS.RECOGNISING"></span>
-                    <span ng-if="project.type === 'regression'">Predicting</span>
-                    <span class="mlprojecttype" ng-if="project.type === 'text' || project.type === 'language'" translate="WORKSHEETS.TYPES.TEXT"></span>
-                    <span class="mlprojecttype" ng-if="project.type === 'imgtfjs'" translate="WORKSHEETS.TYPES.IMAGES"></span>
-                    <span class="mlprojecttype" ng-if="project.type === 'numbers'" translate="WORKSHEETS.TYPES.NUMBERS"></span>
-                    <span class="mlprojecttype" ng-if="project.type === 'sounds'" translate="WORKSHEETS.TYPES.SOUNDS"></span>
-                    <span ng-if="project.labelsSummary" ng-hide="project.type === 'regression'">
-                        {{ 'PROJECTS.AS' | translate }}
-                    </span>
-                    <span ng-if="project.labelsSummary">
-                        <span class="mlprojectlabels">{{ project.labelsSummary }}</span>
-                    </span>
-                    <span ng-if="project.columnsSummary">
-                        {{ project.columnsSummary }}
-                    </span>
+            <div ng-repeat="warning in vm.warnings" class="alert alert-warning alert-dismissible" role="alert" ng-click="vm.dismissAlert('warnings', $index)">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <strong translate="APP.WARNING"></strong> {{ warning.message }}
+            </div>
+        </div>
+
+        <!-- Action bar -->
+        <div class="projects-action-bar">
+            <div class="projects-action-btn" ui-sref="importdataset">
+                <span class="glyphicon glyphicon-import"></span>
+                <span translate="PROJECTS.COPYTEMPLATE"></span>
+            </div>
+            <div class="projects-action-btn projects-action-btn-primary" ui-sref="newproject">
+                <span class="projects-action-plus">+</span>
+                <span translate="PROJECTS.ADDNEWPROJECT"></span>
+            </div>
+        </div>
+
+        <!-- Empty state -->
+        <div class="projects-empty" ng-if="vm.projects && vm.projects.length === 0">
+            <div class="projects-empty-icon">+</div>
+            <p>{{ 'PROJECTS.CREATEFIRSTPROJECT' | translate }}</p>
+        </div>
+
+        <!-- Loading spinner -->
+        <div ng-if="!vm.projects" class="loading"> </div>
+
+        <!-- Project cards grid -->
+        <div class="projects-grid" ng-if="vm.projects && vm.projects.length > 0">
+
+            <div class="project-card" ng-repeat="project in vm.projects" id="{{project.id}}"
+                 ng-class="{ 'project-card-highlight' : vm.highlightId === project.id, 'project-card-placeholder' : project.isPlaceholder }">
+
+                <!-- Standard project (non-language) -->
+                <div class="project-card-body" ng-if="!project.isPlaceholder" ng-hide="project.type === 'language'"
+                     ui-sref="mlproject({ projectId : project.id, userId : project.userid })">
+
+                    <div class="project-card-type-badge"
+                         ng-class="{
+                            'badge-text': project.type === 'text',
+                            'badge-images': project.type === 'imgtfjs',
+                            'badge-numbers': project.type === 'numbers' || project.type === 'regression',
+                            'badge-sounds': project.type === 'sounds'
+                         }">
+                        <span ng-if="project.type === 'text'" translate="WORKSHEETS.TYPES.TEXT"></span>
+                        <span ng-if="project.type === 'imgtfjs'" translate="WORKSHEETS.TYPES.IMAGES"></span>
+                        <span ng-if="project.type === 'numbers' || project.type === 'regression'" translate="WORKSHEETS.TYPES.NUMBERS"></span>
+                        <span ng-if="project.type === 'sounds'" translate="WORKSHEETS.TYPES.SOUNDS"></span>
+                    </div>
+
+                    <h3 class="project-card-title">{{ project.name }}</h3>
+
+                    <div class="project-card-desc">
+                        <span ng-hide="project.type === 'regression'" translate="PROJECTS.RECOGNISING"></span>
+                        <span ng-if="project.type === 'regression'">Predicting</span>
+                        <span ng-if="project.labelsSummary" ng-hide="project.type === 'regression'"> {{ 'PROJECTS.AS' | translate }} </span>
+                        <span ng-if="project.labelsSummary" class="project-card-labels">{{ project.labelsSummary }}</span>
+                        <span ng-if="project.columnsSummary">{{ project.columnsSummary }}</span>
+                    </div>
+
+                    <div class="project-card-icons">
+                        <span class="project-icon project-icon-crowd" ng-if="project.isCrowdSourced" ng-click="vm.displayCrowdSourcedInfo($event)" title="Shared project"></span>
+                        <span class="project-icon project-icon-cloud" ng-if="project.storage !== 'local'" ng-click="vm.displayProjectTypeInfo($event, 'cloud')" title="Cloud storage"></span>
+                        <span class="project-icon project-icon-local" ng-if="project.storage === 'local'" ng-click="vm.displayProjectTypeInfo($event, 'local')" title="Local storage"></span>
+                    </div>
                 </div>
-                <div class="mlprojecticon mlprojectcrowd" ng-if="project.isCrowdSourced"      ng-click="vm.displayCrowdSourcedInfo($event)"> </div>
-                <div class="mlprojecticon mlprojectcloud" ng-if="project.storage !== 'local'" ng-click="vm.displayProjectTypeInfo($event, 'cloud')"> </div>
-                <div class="mlprojecticon mlprojectlocal" ng-if="project.storage === 'local'" ng-click="vm.displayProjectTypeInfo($event, 'local')"> </div>
-            </div>
-            <div class="mlprojectdetails" ng-if="!project.isPlaceholder && project.type === 'language'"
-                 ui-sref="mlproject_slm({ projectId : project.id, userId : project.userid })"
-                 ng-class="{ 'mlprojecthighlight' : vm.highlightId === project.id }">
-                <div class="mlprojecttitle">{{ project.name }}</div>
-                <div class="mlprojectdescription">
-                    <span>Generating</span>
-                    <span class="mlprojecttype" translate="WORKSHEETS.TYPES.TEXT"></span>
-                    <span ng-if="project.modeltype">
-                        ( {{ project.modeltype }} language model )
-                    </span>
+
+                <!-- Language model project -->
+                <div class="project-card-body" ng-if="!project.isPlaceholder && project.type === 'language'"
+                     ui-sref="mlproject_slm({ projectId : project.id, userId : project.userid })">
+
+                    <div class="project-card-type-badge badge-text">
+                        <span translate="WORKSHEETS.TYPES.TEXT"></span>
+                    </div>
+
+                    <h3 class="project-card-title">{{ project.name }}</h3>
+
+                    <div class="project-card-desc">
+                        <span>Generating</span>
+                        <span class="project-card-labels" translate="WORKSHEETS.TYPES.TEXT"></span>
+                        <span ng-if="project.modeltype">( {{ project.modeltype }} language model )</span>
+                    </div>
+
+                    <div class="project-card-icons">
+                        <span class="project-icon project-icon-local" ng-click="vm.displayProjectTypeInfo($event, 'local')" title="Local storage"></span>
+                    </div>
                 </div>
-                <div class="mlprojecticon mlprojectlocal" ng-click="vm.displayProjectTypeInfo($event, 'local')"> </div>
+
+                <!-- Placeholder -->
+                <div class="project-card-body" ng-if="project.isPlaceholder">
+                    <h3 class="project-card-title" style="color: #999;">{{ project.name }}</h3>
+                </div>
+
+                <!-- Card actions -->
+                <div class="project-card-actions" ng-if="!project.isPlaceholder">
+                    <button type="button"
+                            ng-if="isTeacher && !project.isCrowdSourced && project.storage !== 'local'"
+                            class="btn btn-sm btn-default project-share-btn"
+                            ng-click="vm.shareProject($event, project, true)"
+                            translate="PROJECTS.SHARE"></button>
+                    <button type="button"
+                            ng-if="isTeacher && project.isCrowdSourced"
+                            class="btn btn-sm btn-default project-share-btn"
+                            ng-click="vm.shareProject($event, project, false)"
+                            translate="PROJECTS.UNSHARE"></button>
+                    <img src="static/images/trash.png"
+                        class="project-delete-icon"
+                        ng-hide="project.isCrowdSourced && !isTeacher"
+                        ng-click="vm.deleteProject($event, project)"
+                        alt="Delete project" />
+                </div>
             </div>
-            <div class="mlprojectdelete">
-                <button type="button"
-                        ng-if="isTeacher && !project.isCrowdSourced && !project.isPlaceholder && project.storage !== 'local'"
-                        class="btn btn-info mlprojectssharebutton"
-                        ng-click="vm.shareProject($event, project, true)"
-                        translate="PROJECTS.SHARE"></button>
-                <button type="button"
-                        ng-if="isTeacher && project.isCrowdSourced && !project.isPlaceholder"
-                        class="btn btn-info mlprojectssharebutton"
-                        ng-click="vm.shareProject($event, project, false)"
-                        translate="PROJECTS.UNSHARE"></button>
-                <br ng-if="isTeacher"/>
-                <img src="static/images/trash.png"
-                    ng-if="!project.isPlaceholder"
-                    ng-hide="project.isCrowdSourced && !isTeacher"
-                    ng-click="vm.deleteProject($event, project)"
-                    alt="Delete project" />
-            </div>
+
         </div>
-        <br clear="all"/>
     </div>
 </div>
